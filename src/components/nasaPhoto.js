@@ -1,14 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Style = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const Image = styled.img`
+    max-width: 50%;
+    padding: 8px
+`
+const Exp = styled.p`
+    max-width: 50%;
+`
 
 const NasaPhoto  = (props) => {
     return (
-        <div className='nasa-photo-wrapper'>
+        <Style className='nasa-photo-wrapper'>
             <h3>{props.photo.title}</h3>
             <p>{props.photo.date}</p>
-            <img src={props.photo.hdurl} />
-            <p className='explanation'>{props.photo.explanation}</p>
+                <Image src={props.photo.hdurl} />
+            <Exp className='explanation'>{props.photo.explanation}</Exp>
 
-        </div>
+        </Style>
     )
 }
 
